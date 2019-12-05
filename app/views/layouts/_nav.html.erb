@@ -1,0 +1,10 @@
+<ul>
+    <li><%= link_to "Home", users_path %></li>
+    <% if !@user %>
+        <li><%= link_to "Login", login_path %></li>
+        <li><%= link_to "Signup", signup_path %></li>
+    <% else %>
+        <li><%= link_to "Add new meal", new_meal_path %></li>
+<li><%= link_to "Logout", logout_path, method: "delete" %></li>
+<% end %>
+</ul>
