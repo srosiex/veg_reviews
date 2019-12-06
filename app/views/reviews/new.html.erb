@@ -1,21 +1,27 @@
+<% if @meal %>
 <h1>Review a meal</h1>
+<%= @meal.name %>!
+else
+    <h1>Add a review!</h1>
+    <% end %>
 
 <%= form_for(@review) do |f| %>
-    <% if params [:meal_id] %>
+    <% if params[:meal_id] %>
     <%= f.hidden_field :meal_id %>
     <% else %>
     <div>
-        <%= f.label :meal_id, "Select a meal" %>
+        <%= f.label :meal_id, "Select a meal" %><br>
         <%= f.collection_select :meal_id, Meal.all, :id, :name, include_blank: true %>
     </div>
+    <% end %>
     <div>
-        <%= f.label :stars %>
+        <%= f.label :stars %><br>
         <%= f.number_field :stars, min:1, max:5 %>
     </div>
     <br>
     <div>
-        <%= f.label :title %><br>
-        <%= f.text_area :title %>
+        <%= f.label :title %><br><br>
+        <%= f.text_field :title %>
     </div>
     <br>
     <div>
