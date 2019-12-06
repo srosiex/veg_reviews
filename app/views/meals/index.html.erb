@@ -1,0 +1,7 @@
+<h1>Meals Index</h1>
+
+<% @meals.each do |m| %>
+   <h2> <%= m.name %> </h2>
+    <%= m.description %><br>
+    <%= m.restaurant.name %>
+    <% end %>
