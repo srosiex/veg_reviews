@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
-  
-  resources :meals
+
+  resources :meals do
+    resources :reviews, only: [:new, :index]
+  end
   resources :restaurants
   resources :users
   resources :reviews

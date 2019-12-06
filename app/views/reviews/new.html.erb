@@ -1,0 +1,27 @@
+<h1>Review a meal</h1>
+
+<%= form_for(@review) do |f| %>
+    <% if params [:meal_id] %>
+    <%= f.hidden_field :meal_id %>
+    <% else %>
+    <div>
+        <%= f.label :meal_id, "Select a meal" %>
+        <%= f.collection_select :meal_id, Meal.all, :id, :name, include_blank: true %>
+    </div>
+    <div>
+        <%= f.label :stars %>
+        <%= f.number_field :stars, min:1, max:5 %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :title %><br>
+        <%= f.text_area :title %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+    </div>
+
+    <%= f.submit  %>
+    <% end %>
