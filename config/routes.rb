@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
 
+  get '/auth/google/callback' => 'sessions#omniauth'
+
   resources :meals do
     resources :reviews, only: [:new, :index]
   end
