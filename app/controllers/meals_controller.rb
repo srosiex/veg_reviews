@@ -1,10 +1,12 @@
 class MealsController < ApplicationController
 
     def index
-        @meals = Meal.all
+        authenticate
+        @meals = Meal.grouped_ratings
     end
 
     def new
+
         @meal = Meal.new
         @meal.build_restaurant
     end
@@ -20,10 +22,15 @@ class MealsController < ApplicationController
         end
     end
 
+    def ratings
+        authenticate
+        @meals = Meal.grouped_ratings
+    end
+
 private
 
 def meal_params
-    params.require(:meal).permit(:name, :description, :restaurant_id, restaurant_attributes: [:name, :all_vegan])
+    params.require(:meal).permit(:name, :description, :restaurant_id, restaurant_attributes: [:name])
 end
 
 end

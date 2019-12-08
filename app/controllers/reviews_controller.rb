@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
     
     def index
+        authenticate
         if @meal = Meal.find_by_id(params[:meal])
         @reviews = @meal.reviews.all
         else
@@ -9,6 +10,7 @@ class ReviewsController < ApplicationController
     end
     
     def new
+        authenticate
         if @meal = Meal.find_by_id(params[:meal_id])
         @review = @meal.reviews.build
         else
@@ -17,6 +19,7 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        authenticate
         @review = current_user.reviews.build(review_params)
         if @review.save
             redirect_to review_path(@review)
@@ -26,6 +29,7 @@ class ReviewsController < ApplicationController
     end
 
     def show
+        authenticate
         @review = Review.find_by_id(params[:id])
     end
 
