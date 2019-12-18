@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-
+    before_action :authenticate
     def index
         authenticate
         @meals = Meal.grouped_ratings

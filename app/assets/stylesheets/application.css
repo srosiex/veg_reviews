@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+ html{ 
+    background-color: #fae3d9;
+ }
+.login {
+    background-color: #fae3d9;
+    border: 2px solid #bbded6;
+    border-radius: 5px;
+    padding: 5px;
+    float: center;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 5px;
+}
+.meal_h
+{
+    color: #ffb6b9;
+}
+.meal_form {
+    background-color: #fae3d9;
+    border: 2px solid #bbded6;
+    border-radius: 5px;
+    padding: 5px;
+    float: center;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 5px;
+}
+.meals{
+    background-color: #fae3d9;
+    border: 2px solid #bbded6;
+    border-radius: 5px;
+    padding: 5px;
+    float: center;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 5px;
+
+}

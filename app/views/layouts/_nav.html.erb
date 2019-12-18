@@ -1,12 +1,34 @@
-<ul>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="nav.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <script>
 
-    <li><%= link_to "Home", meals_path %></li>
-    <% if !@user %>
-        <li><%= link_to "Login", login_path %></li>
-        <li><%= link_to "Signup", signup_path %></li>
-    <% else %>
-        <li><%= link_to "Add new meal", new_meal_path %></li>
-<li><%= link_to "Logout", logout_path, method: "delete" %></li>
-<% end %>
+  $(function() {
+      $(".toggle").on("click", funtion(){
+        
+        if($(".nav_link").hasClass("active")){
+            $(".nav_link").removeClass("active");
+        }
+      else{
+        $(".nav_link").addClass("active");
+      }
+      })
+  });
+
+  </script>
+<div class="container">
+<ul class="menu">
+<li class="logo"><a href="#">VegReviews</a>
+    <li class="nav_link"><%= link_to "Home", meals_path %></li>
+    <li class="nav_link"><%= link_to "View all reviews", reviews_path %></li>
+        <li class="nav_link button"><%= link_to "Login", login_path  %></li>
+        <li class="nav_link button"><%= link_to "Signup", signup_path %></li>
+<li class="nav_link button"><%= link_to "Logout", logout_path, method: "delete" %></li>
+    <li class="toggle"><spam class="bars"></span</li>
 </ul>
+</div>
+</head>
+</html>

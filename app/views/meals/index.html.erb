@@ -1,8 +1,10 @@
-<h1>Meals Index</h1>
+<div class="meal_h"><h1>Meals Index</h1></div>
+
 
 <% @meals.each do |m| %>
-   <h2> <%= m.name %> </h2>
+    <div class="meals"> <h2> <%= m.name %> </h2>
     <%= m.description %><br>
     <%= m.restaurant.name %>
-    <%= link_to "Write a review", new_meal_review_path(m.id) %>
+    <%= link_to "Write a review", new_meal_review_path(m.id) %> </div>
     <% end %>
+   

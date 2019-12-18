@@ -2,6 +2,7 @@
 
 <p><%= flash[:error] %></p>
 
+<div class="login">
 <%= form_for(:user) do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
@@ -11,3 +12,4 @@
     <br>
     <%= f.submit "Login" %>
     <% end %>
+</div>

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     def logged_in?
-        !!session[:user_id]
+        !!current_user
     end
     def current_user
         @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
             redirect_to login_path
     end
 end
+
+def authenticate_user(meal)
+    authenticate
+    redirect '/index' if @meal && current_user != @meal.user
+end
+
 end
