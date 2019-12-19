@@ -115,8 +115,8 @@ a:hover{
     .button a{
         text-decoration: none;
         padding: 7px 15px;
-        background-color: teal;
-        border: 1px solid #006d6d;
+        background-color: rgb(87, 143, 143);
+        border: 1px solid #547474;
         border-radius: 50em;
     }
     .button.secondary a {

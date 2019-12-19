@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
-    
+
+    before_action :authenticate
+    skip_before_action :authenticate, only: [:index]
     def index
         authenticate
         if @meal = Meal.find_by_id(params[:meal])
@@ -38,5 +40,7 @@ class ReviewsController < ApplicationController
     def review_params
         params.require(:review).permit(:meal_id, :content, :stars, :title)
     end
+
+
 
 end

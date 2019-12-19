@@ -16,7 +16,15 @@
  html{ 
     background-color: #fae3d9;
  }
-.login {
+ .body{
+    padding: 5px;
+    float: center;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 5px;
+ }
+
+.signup {
     background-color: #fae3d9;
     border: 2px solid #bbded6;
     border-radius: 5px;
