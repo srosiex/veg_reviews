@@ -48,7 +48,29 @@
     margin-left: 150px;
     margin-top: 5px;
 }
-.meals{
+.meal-title {
+    color: #6c9797
+    text-align: center;
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 12;
+    font-weight: normal;
+
+}
+
+
+.form-container-index{
+    background-color: #e8f8f4;
+    opacity: 0.8;
+border-radius: 5px;
+padding: 5px;
+float: center;
+margin-right: 150px;
+margin-left: 150px;
+margin-top: 20px;
+
+}
+.items-container{
     background-color: #fae3d9;
     border: 2px solid #bbded6;
     border-radius: 5px;
@@ -58,4 +80,8 @@
     margin-left: 150px;
     margin-top: 5px;
 
+}
+.logo{
+    font-family: 'Purple Purse', cursive;
+    font-size: 25;
 }

@@ -12,6 +12,7 @@ class MealsController < ApplicationController
     end
 
     def create
+        raise params.inspect
         @meal = Meal.new(meal_params)
         @meal.user_id = session[:user_id]
         if @meal.save
@@ -21,6 +22,12 @@ class MealsController < ApplicationController
             render :new
         end
     end
+
+    def show
+        authenticate
+        @meal = Meal.find_by_id(params[:id])
+    end
+    
 
     def ratings
         authenticate

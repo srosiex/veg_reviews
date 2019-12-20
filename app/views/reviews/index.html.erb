@@ -1,3 +1,5 @@
+<div class="full-container-index">
+
 <h3><%= link_to "Add a new review", new_review_path %></h3>
 <% if @meal %>
 <h1>View all reviews for</h1>
@@ -7,8 +9,10 @@ else
     <% end %>
 
 <% @reviews.each do |r| %>
+    <div class="form-container-index">
     <h2><%= r.meal.name %></h2>
     <h2><%= r.title %> - <%= r.stars %> </h2>
     <p> <%= r.content %> </p>
+    </div>
     <% end %>
-
+</div>

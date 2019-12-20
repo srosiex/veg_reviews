@@ -1,29 +1,40 @@
 
-    <div class="meal_form">
+    <div class="full-container">
+    <div class="form-container">
 <%= form_for(@meal) do |f| %>
+    <div class="input-group">
         <%= f.label :name %>
         <%= f.text_field :name %>
- 
+        </div> 
+
     <br>
 
+    <div class="input-group">
         <%= f.label :description %><br>
         <%= f.text_area :description %>
+    </div> 
 
         <br>
   Select a restaurant:
   <br>
+  <div class="input-group">
         <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: true %>
-
+    </div> 
         <br>
     Create new restaurant
     <br>
+
         <%= f.fields_for :restaurant do |r| %>
+            <div class="input-group">
             <%= r.label :name %>
             <%= r.text_field :name %>
+            </div> 
             <% end %>
 
+
             <br>
-    <%= f.submit  %>
+    <%= f.submit class: "submit-button" %>
     
     <% end %>
+    </div>    
     </div>

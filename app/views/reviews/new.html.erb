@@ -1,5 +1,8 @@
 <%= render partial: 'layouts/errors', locals:{object: @review}%>
 
+<div class="full-container">
+<div class="form-container">
+
 <% if @meal %>
 <h1>Add a review for <%= @meal.restaurant.name %> <%= @meal.name %>!</h1>
 <% else %>
@@ -10,25 +13,28 @@
     <% if params[:meal_id] %>
     <%= f.hidden_field :meal_id %>
     <% else %>
-    <div>
+    <div class="input-group">
         <%= f.label :meal_id, "Select a meal" %><br>
         <%= f.collection_select :meal_id, Meal.all.alphabetical_order, :id, :name_and_restaurant, include_blank: true %>
     </div>
     <% end %>
-    <div>
+    <div class="input-group">
         <%= f.label :stars %><br>
         <%= f.number_field :stars, min:1, max:5 %>
     </div>
     <br>
-    <div>
+    <div class="input-group">
         <%= f.label :title %><br><br>
         <%= f.text_field :title %>
     </div>
     <br>
-    <div>
+    <div class="input-group">
         <%= f.label :content %><br>
         <%= f.text_area :content %>
     </div>
 
-    <%= f.submit  %>
+    <%= f.submit class: "submit-button" %>
     <% end %>
+
+    </div>    
+    </div>
