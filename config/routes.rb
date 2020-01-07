@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :meals do
     resources :reviews, only: [:new, :index]
+    resources :restaurants, only: [:new, :index]
   end
+
   resources :restaurants
   resources :users
   resources :reviews

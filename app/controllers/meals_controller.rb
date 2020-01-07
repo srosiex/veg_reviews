@@ -12,9 +12,10 @@ class MealsController < ApplicationController
     end
 
     def create
-        raise params.inspect
+      
         @meal = Meal.new(meal_params)
         @meal.user_id = session[:user_id]
+        # binding.pry
         if @meal.save
             redirect_to meal_path(@meal)
         else

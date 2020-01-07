@@ -1,24 +1,27 @@
-# README
+Review
+Stars
+Title
+Content
+Meal_id
+User_id
+Belongs_to :meal
+Belongs_to :user
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User
+Username
+Email
+Password
+Has_many reviews
+Has_many meals
 
-Things you may want to cover:
+Meal
+Description
+Has_many :reviews
+Has_many :users, through :reviews
+Belongs_to :restaurant
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Restaurant
+Name
+All_vegan :boolean
+Has_many :meals
+Meal_id
